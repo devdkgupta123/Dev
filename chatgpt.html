@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vandna Computer Center</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: skyblue;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto;
+    }
+    .question-box {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .question {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+    .correct {
+      color: green;
+      font-weight: bold;
+    }
+    .wrong {
+      color: red;
+      font-weight: bold;
+    }
+    .navbar {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+   h2{font-size: 30px;
+      color: red;}
+    h3{font-size: 30px;
+       font-display: flex;
+       color: darkred;
+       }
+      h4{font-size: 30px;
+        color: #581;}
+      h5{font-size: 30px;
+         color: #ff5352;}
+      p{font-size: 20px;
+        color: lightslategray;}
+    .headline-box {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 10px;
+      background-color: #f8f9fa;
+    }
+
+    #resumeForm {
+      display: none;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+      border-radius: 10px;
+      background-color: #fff;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="bg-primary text-white text-center py-4">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="m-0">Vandna Computer Center</h1>
+      <img src="https://via.placeholder.com/80" alt="VCC Logo" class="img-fluid rounded-circle">
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">.
+      <a class="navbar-brand" href="#">VCC</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#Home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Application">Application</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Help">Help</a>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-warning text-dark ms-2" onclick="toggleResumeForm()">Resume Maker</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<body >
+  <!-- Headlines -->
+ <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+       Today's Top Social News
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+      <ul>
+        <h2> 12 जुलाई 2025 की कुछ प्रमुख खबरें दी गई हैं:</h2>
+<li>दिल्ली में एक 4 मंजिला इमारत ढहने से 6 लोगों की मौत हो गई, जिसमें एक साल का बच्चा भी शामिल है। अभी भी कुछ लोगों के मलबे में फंसे होने की आशंका है.</li>
+<li>कर्नाटक में एक रूसी महिला अपनी दो बेटियों के साथ एक गुफा में रहती हुई मिली है.</li>
+<li>उड़ीसा के झारसुगुड़ा में पुलिस ने 44 बंगाली भाषी लोगों को हिरासत में लिया है, क्योंकि वे भारतीय नागरिकता का प्रमाण पत्र नहीं दे पाए.
+अधिकारियों ने बताया कि IIM कोलकाता में एक महिला के साथ कथित बलात्कार के मामले में IIM के एक छात्र को गिरफ्तार कर सात दिनों की पुलिस हिरासत में भेज दिया गया है.</li>
+<li>वरिष्ठ नेता मोहन भागवत ने कहा कि नेताओं को 75 साल की उम्र में रिटायर हो जाना चाहिए, जिस पर विपक्ष ने सवाल उठाए हैं.</li>
+<li>तमिलनाडु के कई हिस्सों में MBBS की डिग्री वाले डॉक्टरों को कम भुगतान किया जा रहा है.</li>
+<li>आंध्र प्रदेश के उपमुख्यमंत्री पवन कल्याण ने शुक्रवार को हैदराबाद में दक्षिण संवाद का उद्घाटन किया, जिसका आयोजन गृह मंत्रालय के राजभाषा विभाग ने किया है.</li>
+<li>केएल राहुल ने लॉर्ड्स में शतक जड़कर 53 साल पुराना फारुख इंजीनियर का रिकॉर्ड तोड़ दिया है। वह लॉर्ड्स में शतक लगाने वाले दिलीप वेंगसरकर के बाद पहले भारतीय बन गए हैं.</li>
+<li>केएल राहुल ने लॉर्ड्स टेस्ट में अर्धशतक के साथ एमएस धोनी के एक ऐतिहासिक रिकॉर्ड की बराबरी की है.</li>
+<li>ऋषभ पंत ने लॉर्ड्स टेस्ट में अर्धशतक के साथ एमएस धोनी के एक ऐतिहासिक रिकॉर्ड की बराबरी की है.</li>
+<li>यह ध्यान देने योग्य है कि कुछ खबरें क्रिकेट मैच और व्यक्तिगत घटनाओं से संबंधित हैं, जबकि अन्य राष्ट्रीय और क्षेत्रीय मुद्दों पर प्रकाश डालत हैं।<li></ul>
+    </div></div></div>
+  </body>
+
+    <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Today's Top Defence News
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <ul>
+          <section>
+  <h2>19 जुलाई 2025 – आज की 10 मुख्य खबरें</h2>
+  <ol>
+    <li>स्टालिन ने NDA को बताया "नेशनल डिक्टेटरशिप अरेंजमेंट", बोले – विपक्ष संसद में कड़ी चुनौती देगा।</li>
+    <li>जयपुर के पद्मनाभ सिंह इंग्लैंड में "इंडियन पोलो डे" पर कप्तानी करेंगे।</li>
+    <li>प्रधानमंत्री मोदी 23-24 जुलाई को ब्रिटेन दौरे पर जाएंगे।</li>
+    <li>रेखा गुप्ता आज हरियाणा के गाँव में पेड़ लगाकर जन्मदिन मना रहीं।</li>
+    <li>भारत-अमेरिका के बीच 31 जुलाई से पहले व्यापार समझौता हो सकता है।</li>
+    <li>तमिलिसाई बोलीं – NDA तमिलनाडु में बेहतर शासन लाएगा।</li>
+    <li>आज रात 7 बजे INDIA गठबंधन की वर्चुअल मीटिंग होगी।</li>
+    <li>उद्धव ठाकरे दिल्ली रवाना – INDIA मीटिंग में शामिल होंगे।</li>
+    <li>Free Fire MAX में Ddakji Challenge शुरू – ₹4.56 मिलियन डायमंड्स जीतने का मौका।</li>
+    <li>विजयवाड़ा बनी देश की चौथी सबसे स्वच्छ शहर।</li>
+  </ol>
+</section>
+</ul>
+</div></div></div>
+   
+<div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        States and Capitals
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <ul>
+          <h3>
+            भारत के राज्यों और उनकी राजधानियों की एक सूची दी गई है:</h3>
+<li>आंध्र प्रदेश - अमरावती</li>
+<li>अरुणाचल प्रदेश - ईटानगर</li>
+<li>असम - दिसपुर</li>
+<li>बिहार - पटना</li>
+<li>छत्तीसगढ़ - रायपुर</li>
+<li>गोवा - पणजी</li>
+<li>गुजरात - गांधीनगर</li>
+<li>हरियाणा - चंडीगढ़</li>
+<li>हिमाचल प्रदेश - शिमला (ग्रीष्मकालीन), धर्मशाला (शीतकालीन)</li>
+<li>झारखंड - रांची</li>
+<li>कर्नाटक - बेंगलुरु</li>
+<li>केरल - तिरुवनंतपुरम</li>
+<li>मध्य प्रदेश - भोपाल</li>
+<li>महाराष्ट्र - मुंबई (ग्रीष्मकालीन), नागपुर (शीतकालीन)</li>
+<li>मणिपुर - इंफाल</li>
+<li>मेघालय - शिलांग</li>
+<li>मिजोरम - आइजोल</li>
+<li>नागालैंड - कोहिमा</li>
+<li>ओडिशा - भुवनेश्वर</li>
+<li>पंजाब - चंडीगढ़</li>
+<li>राजस्थान - जयपुर</li>
+<li>सिक्किम - गंगटोक</li>
+<li>तमिलनाडु - चेन्नई</li>
+<li>तेलंगाना - हैदराबाद</li>
+<li>त्रिपुरा - अगरतला</li>
+<li>उत्तर प्रदेश - लखनऊ</li>
+<li>उत्तराखंड - देहरादून (ग्रीष्मकालीन), भराडीसैंण (शीतकालीन)</li>
+<li>पश्चिम बंगाल - कोलकाता </li>
+<h3>नीचे भारत के केंद्र शासित प्रदेशों और उनकी राजधानियों की एक सूची दी गई है:</h3>
+<li>अंडमान और निकोबार द्वीप समूह - पोर्ट ब्लेयर</li>
+<li>चंडीगढ़ - चंडीगढ़</li>
+<li>दादरा और नगर हवेली और दमन और दीव - दमन</li>
+<li>दिल्ली - नई दिल्ली</li>
+<li>जम्मू और कश्मीर - श्रीनगर (ग्रीष्मकालीन), जम्मू (शीतकालीन)</li>
+<li>लद्दाख - लेह (ग्रीष्मकालीन), कारगिल (शीतकालीन)</li>
+<li>लक्षद्वीप - कावारत्ती</li>
+<li>पुदुचेरी - पुदुचेरी</li></ul></div></div></div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        Top 10 "World Records"
+      </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+
+<ul>
+  <h5>
+Here are 10 of the most popular or recently broken Guinness World Records as of July 12, 2025:</h5>
+<li>Most Career Goals (Football): This is a highly prestigious football record based on the total number of goals scored by a player in their career. As of June 8, 2025, Cristiano Ronaldo holds the record for most official goals scored in football history with 938 goals in 1,209 appearances.</li>
+<li>Shortest Woman Living: Jyoti Amge from India holds this record, measuring 62.8 cm (2 ft 3⁄4 in) tall.</li>
+<li>Most Pull-ups in 24 Hours (Male): Oh Yohan of South Korea set the record with 11,707 pull-ups completed in Incheon.</li>
+<li>Fastest Mental Calculation (Adding 100 Four-Digit Numbers): 14-year-old Aaryan Shukla from India achieved this record, completing the task in 30.9 seconds.</li>
+<li>Longest Tongue: Nick Stoeberl from the USA holds the record for the longest male tongue, measuring 10.1 cm (3.97 in). Chanel Tapper also from the USA holds the record for the longest female tongue measuring 9.75 cm (3.8 in).</li>
+<li>Longest Time in an Abdominal Plank Position (Male): Josef Šálek from the Czech Republic holds this record, maintaining the position for 9 hours, 38 minutes, and 47 seconds.</li>
+<li>Highest Car Bungee Jump: Nissan France achieved this record by performing a car bungee jump from 65 meters (213 ft 3 in).</li>
+<li>Most Viewed YouTube Video in 24 Hours: While "Baby Shark Dance" currently holds the record for the most-viewed YouTube video of all time with 15.8 billion views as of April 26, 2025, the record for the most views in a single 24-hour period is held by BTS's "Butter" music video with 108 million views.</li>
+<li>Longest Glass-Bottomed Water Slide: This record is held by a water slide in Sichuan, China, measuring 4,283.701 meters (14,054.14 ft).</li>
+<li>Oldest Person Ever: Jeanne Louise Calment of France lived to the age of 122 years and 164 days. </li>
+<p>It's important to note that Guinness World Records are constantly being broken and updated. The records mentioned here are some of the most current and noteworthy as of today, July 12, 2025.</p>
+</h5></ul></div></div></div>
+
+<div class="options" width="500px">
+  <button type = "button" class="Calculator btn btn-danger" onclick="togglecalculator()">Calculator<link href="Quiz.html" rel="stylesheet"></button>
+</div>
+<script>
+  function togglecalculator(){
+  var Calculator = getElementById(Calculator);
+  let 
+
+  }
+
+
+</script>
+
+
+
+<!-- Resume Maker Form -->
+    <div id="resumeForm">
+      <h3 class="mb-4">Create Your Resume</h3>
+      <form id="form">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Phone</label>
+            <input type="text" class="form-control" id="phone" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Upload Photo</label>
+            <input type="file" class="form-control" id="photo" accept="image/*">
+          </div>
+          <div class="col-12">
+            <label class="form-label">Education</label>
+            <textarea class="form-control" id="education" required></textarea>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Skills</label>
+            <textarea class="form-control" id="skills" required></textarea>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Experience</label>
+            <textarea class="form-control" id="experience"></textarea>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Languages</label>
+            <textarea class="form-control" id="languages"></textarea>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Hobbies</label>
+            <textarea class="form-control" id="hobbies"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success mt-4">Generate Resume PDF</button>
+      </form>
+    </div>
+  </a>
+
+  <script>
+    function toggleResumeForm() {
+      const form = document.getElementById("resumeForm");
+      form.style.display = form.style.display === "none" ? "block" : "none";
+    }
+
+    document.getElementById('form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      let y = 10;
+
+      doc.setFontSize(22);
+      doc.text("RESUME", 90, y);
+      y += 20;
+
+      const reader = new FileReader();
+      const file = document.getElementById('photo').files[0];
+
+      reader.onloadend = function () {
+        if (file) {
+          doc.addImage(reader.result, 'JPEG', 150, 10, 40, 40);
+        }
+
+        y = 60;
+        doc.setFontSize(12);
+        doc.text("Name: " + document.getElementById('name').value, 10, y); y += 10;
+        doc.text("Email: " + document.getElementById('email').value, 10, y); y += 10;
+        doc.text("Phone: " + document.getElementById('phone').value, 10, y); y += 10;
+        doc.line(10, y, 200, y); y += 10;
+
+        doc.text("Education:", 10, y); y += 10;
+        doc.text(document.getElementById('education').value, 10, y); y += 20;
+
+        doc.text("Skills:", 10, y); y += 10;
+        doc.text(document.getElementById('skills').value, 10, y); y += 20;
+
+        doc.text("Experience:", 10, y); y += 10;
+        doc.text(document.getElementById('experience').value || "None", 10, y); y += 20;
+
+        doc.text("Languages:", 10, y); y += 10;
+        doc.text(document.getElementById('languages').value || "None", 10, y); y += 20;
+
+        doc.text("Hobbies:", 10, y); y += 10;
+        doc.text(document.getElementById('hobbies').value || "None", 10, y);
+
+        doc.save("resume.pdf");
+      };
+
+      if (file) {
+        reader.readAsDataURL(file);
+      } else {
+        reader.onloadend();
+      }
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
